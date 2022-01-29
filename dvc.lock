@@ -4,12 +4,12 @@ stages:
     cmd: python scripts/create_dataset.py
     deps:
     - path: scripts/create_dataset.py
-      md5: 9a3b5fb26993941de0061fd94cfbb780
-      size: 971
+      md5: da1f6143e26452d9d89f4b0b5b6a226d
+      size: 955
     outs:
     - path: assets/data
-      md5: cdcef2f53b9332303206ec6a6d80c77b.dir
-      size: 2254649
+      md5: 3382d907973192143c085a3b7d5ed2e4.dir
+      size: 2082423
       nfiles: 2
   features-extraction:
     cmd: python scripts/extract_features.py
@@ -66,3 +66,19 @@ stages:
       md5: 988b82f8100aa9b9ea7885e84309b8c9.dir
       size: 20744
       nfiles: 1
+  evaluate-linear-regression:
+    cmd: python scripts/eval_model.py
+    deps:
+    - path: assets/features/test_features.csv
+      md5: 77e62b7604a9264bb86f8efeaf9828e3
+      size: 249221
+    - path: assets/features/test_labels.csv
+      md5: 3a3436aa34b25017b9b6401dd492010b
+      size: 6557
+    - path: assets/models_v2/model_v2.pk
+      md5: 4f70f320df4418e0cbde4cedfa95b1d0
+      size: 20744
+    outs:
+    - path: assets/metrics_v2.json
+      md5: af7766bdea0492cfe367a680b463918d
+      size: 64

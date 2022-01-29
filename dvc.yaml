@@ -33,3 +33,11 @@ stages:
     - assets/features/train_labels.csv
     outs:
     - assets/models_v2
+  evaluate-linear-regression:
+    cmd: python scripts/eval_model.py
+    deps:
+    - assets/features/test_features.csv
+    - assets/features/test_labels.csv
+    - assets/models_v2/model_v2.pk
+    outs:
+    - assets/metrics_v2.json
