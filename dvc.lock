@@ -1,0 +1,13 @@
+schema: '2.0'
+stages:
+  dataset-creation:
+    cmd: python scripts/create_dataset.py
+    deps:
+    - path: scripts/create_dataset.py
+      md5: 9a3b5fb26993941de0061fd94cfbb780
+      size: 971
+    outs:
+    - path: assets/data
+      md5: cdcef2f53b9332303206ec6a6d80c77b.dir
+      size: 2254649
+      nfiles: 2
