@@ -52,3 +52,17 @@ stages:
     - path: assets/metrics.json
       md5: 35eedf08d727011832ecf3079a651cb9
       size: 97
+  train-logistic-regression:
+    cmd: python scripts/train_model.py
+    deps:
+    - path: assets/features/train_features.csv
+      md5: 62c55534848dfda8ddf615d7842d21ff
+      size: 995432
+    - path: assets/features/train_labels.csv
+      md5: dee9ea3871abf6ce8c0a3671c1439653
+      size: 26176
+    outs:
+    - path: assets/models_v2
+      md5: 988b82f8100aa9b9ea7885e84309b8c9.dir
+      size: 20744
+      nfiles: 1
