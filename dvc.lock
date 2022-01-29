@@ -11,3 +11,14 @@ stages:
       md5: cdcef2f53b9332303206ec6a6d80c77b.dir
       size: 2254649
       nfiles: 2
+  features-extraction:
+    cmd: python scripts/extract_features.py
+    deps:
+    - path: scripts/extract_features.py
+      md5: 161f1dbfae863c9250f66354110fc346
+      size: 1356
+    outs:
+    - path: assets/features
+      md5: 4ef44f4aa3a39778fca2ff924a399180.dir
+      size: 1277386
+      nfiles: 4
