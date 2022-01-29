@@ -36,3 +36,19 @@ stages:
       md5: 492c0f147eba1c876ba205ab0c209016.dir
       size: 94604059
       nfiles: 1
+  evaluate-random-forest:
+    cmd: python scripts/eval_model.py
+    deps:
+    - path: assets/features/test_features.csv
+      md5: 77e62b7604a9264bb86f8efeaf9828e3
+      size: 249221
+    - path: assets/features/test_labels.csv
+      md5: 3a3436aa34b25017b9b6401dd492010b
+      size: 6557
+    - path: assets/models/model.pk
+      md5: 9185ddc2b0baa46fc17c0b21d19f165a
+      size: 94604059
+    outs:
+    - path: assets/metrics.json
+      md5: 35eedf08d727011832ecf3079a651cb9
+      size: 97

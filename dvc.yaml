@@ -18,3 +18,11 @@ stages:
     - assets/features/train_labels.csv
     outs:
     - assets/models
+  evaluate-random-forest:
+    cmd: python scripts/eval_model.py
+    deps:
+    - assets/features/test_features.csv
+    - assets/features/test_labels.csv
+    - assets/models/model.pk
+    outs:
+    - assets/metrics.json
